@@ -11,7 +11,7 @@ router.post('/driver',(req, res, next) => {
       var sql = `SELECT *,braParentID as parentId FROM seller_driver JOIN tblBranch ON braAutoID=braID WHERE phone = ? AND passwords = ? AND status_ = 1 AND typeAccount = 'driver' `
       pool.getConnection(function(err, connection) {
             if(err){
-                  res.status(400).json({
+                res.status(400).json({
                       message: err,
                   });
               }else{
@@ -71,6 +71,7 @@ router.post('/seller',(req, res, next) => {
               }else{
                   connection.query(sql, dataSql, function (error, results, fields) {
                         connection.release();
+                        console.log(error)
                         if(error){
                               res.status(400).json({
                                   error: error,

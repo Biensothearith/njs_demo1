@@ -13,6 +13,7 @@ router.post('/', (req, res, next) => {
     var dataSql = [email, password];
     pool.getConnection(function(err, connection) {
         if(err){
+            console.log(err,'-=-=')
             res.status(400).json({
                 err: err,
             });

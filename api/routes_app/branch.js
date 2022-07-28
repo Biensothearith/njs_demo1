@@ -5,6 +5,7 @@ router.get('/', (req, res, next) => {
     var sql = `
     SELECT braAutoID AS id, braBranchName AS name, braPhone AS phone, braEmail AS email, 
     braName AS branchName, braBranchPhone AS branchPhone, braLocation AS branchLocation, 
+    braMessageLink as messengerLink,
     braAddress AS branchAddress, braStatus AS status 
     FROM tblBranch
     WHERE braStatus = 1`

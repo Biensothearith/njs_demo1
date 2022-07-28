@@ -11,12 +11,11 @@ app.use(cors())
 
 var mysql = require('mysql');
 var pool  = mysql.createPool({
-   host: '127.0.0.1',
+   host: '8.219.122.105',
    port: 3306,
-   user: 'root',
+   user: 'admin',
    password: 'root',
    database: 'demo1',
-   // socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'
 });
 global.defultBranchID = 1;
 global.pool = pool;
@@ -26,8 +25,8 @@ global.lang = 'kh';
 global.row_count = 20;
 global.row_count_data = 10;
 
-global.server_path = "/Users/themacstore/Projects/NodeJS/NJS_MST_express";
-global.file_upload_path = "/Users/themacstore/Projects/NodeJS/NJS_MST_express/data/files/";
+global.server_path = "/Users/themacstore/Projects/node/NJS_demo_seller1";
+global.file_upload_path = "/Users/themacstore/Projects/node/NJS_demo_seller1/data/files/";
 
 var serviceAccount = require(server_path+"/serviceAccountKey.json");
 admin.initializeApp({
@@ -419,10 +418,6 @@ global.getRandomDriver = function (braID, requestType, callback) {
                            driAutoID:results[0].driAutoID
                      });
                   }else{
-                     // return callback({
-                     //       code:400,
-                     //       message: 'all_drivers_busy',
-                     // });
                      return callback({
                            code:200,
                            message: 'success',
